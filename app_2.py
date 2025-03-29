@@ -9,7 +9,7 @@ import streamlit as st
 
 
 
-groq_api_key=os.getenv("GROQ_API_KEY")
+groq_api_key=os.getenv("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")
 
 load_dotenv()
 model=ChatGroq(model="llama3-70b-8192",groq_api_key=groq_api_key)
@@ -29,10 +29,10 @@ for message in st.session_state.messages:
     with st.chat_message(message["role"]):
         st.markdown(message["content"])
 
-user_input = st.text_input("What question you have in mind?")
+prompt = st.chat_input("Say something")
 
-response = chatbot.run(user_input)
-st.session_state.messages.append({"role": "user", "content": user_input})
+response = chatbot.run(prompt)
+st.session_state.messages.append({"role": "user", "content": prompt})
 st.session_state.messages.append({"role": "assistant", "content": response})
 
 # Display chatbot response
