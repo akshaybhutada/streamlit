@@ -9,11 +9,11 @@ import streamlit as st
 
 
 
-groq_api_key=os.getenv("GROQ_API_KEY")
+# groq_api_key=os.getenv("GROQ_API_KEY")
 
 groq_api_key='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'
 
-load_dotenv()
+# load_dotenv()
 model=ChatGroq(model="llama3-70b-8192",groq_api_key=groq_api_key)
 memory = ConversationBufferMemory()
 
